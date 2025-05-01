@@ -5,7 +5,7 @@ service FileUploader {
 }
 
 message FileChunk {
-  bytes content = 1;
+  string content = 1;
 }
 
 message UploadStatus {

@@ -1,0 +1,3 @@
+Este é o 
+teste de client stream 
+gRPC!
