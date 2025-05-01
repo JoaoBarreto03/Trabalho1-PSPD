@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service FileUploader {
+  rpc UploadFile (stream FileChunk) returns (UploadStatus);
+}
+
+message FileChunk {
+  bytes content = 1;
+}
+
+message UploadStatus {
+  string message = 1;
+}

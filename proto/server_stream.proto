@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service NewsService {
+  rpc StreamHeadlines (NewsRequest) returns (stream NewsHeadline);
+}
+
+message NewsRequest {
+  string category = 1;
+}
+
+message NewsHeadline {
+  string headline = 1;
+}
