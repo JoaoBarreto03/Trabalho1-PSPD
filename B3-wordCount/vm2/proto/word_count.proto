@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service WordCountService {
+  rpc CountWords (TextRequest) returns (WordCountResponse);
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message WordCountResponse {
+  map<string, int32> word_counts = 1;
+}

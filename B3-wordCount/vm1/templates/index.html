@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Palavras</title>
+</head>
+<body>
+    <h1>Contador de Palavras via gRPC</h1>
+    <form action="/processar" method="post">
+        <textarea name="texto" rows="10" cols="50" placeholder="Digite o texto..."></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if resultado %}
+        <h2>Resultado</h2>
+        <pre>{{ resultado }}</pre>
+    {% endif %}
+</body>
+</html>

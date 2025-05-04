@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package wordcount;
+
+option go_package = "wordcountpb";
+
+service WordCountService {
+  rpc MostFrequentWord (TextRequest) returns (MostFrequentWordResponse);
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message MostFrequentWordResponse {
+  string word = 1;
+  int32 count = 2;
+}
