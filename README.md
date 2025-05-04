@@ -2,13 +2,9 @@
 
 
 ## 1. Alunos
-- Artur Vinícius Dias Nunes: 190142421
-- José Luís Ramos Teixeira: 190057858
-- Pablo Christianno Silva Guedes: 200042416
-- Philipe de Sousa Barros: 170154319
-- Victor de Souza Cabral: 190038900
 
 
+Leonardo Milomes Vitoriano - 201000379
 
 ## 2. Objetivo
 
