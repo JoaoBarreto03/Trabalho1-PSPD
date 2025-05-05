@@ -18,7 +18,7 @@ Construir uma aplicação distribuída com **gRPC** e **ProtoBuffer** e explorar
 
 A aplicação será um microserviço de contador de palavras, onde as palavras são contadas e a palavra mais frequente é apresentada. 
 
-Adicione o texto desejado e depois escolha os serviços: ```Contar Palavras (histograma)```, ou  ```Palavra mais frequente``` e depois clicando em ```Ambos``` para realizar os 2 serviços. Isso no frontend da aplicação.
+Adicione o texto desejado e depois escolha os serviços: ```Contar Palavras (histograma)```, ou  ```Palavra mais frequente``` ou ```Ambos``` para realizar os 2 serviços. Isso no frontend da aplicação.
 
 
 
