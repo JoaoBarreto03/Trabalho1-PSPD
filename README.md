@@ -31,12 +31,6 @@ O [gRPC](https://grpc.io/) (RPC da GOOGLE) é uma estrutura que permite a comuni
 
 Este projeto faz uso da virtualização com o auxílio de ferramentas como **QEMU**, **Libvirt**, **Virt-manager** e **virsh** para criar e gerenciar máquinas virtuais, que compõem a base da infraestrutura distribuída implementada.
 
-</br>
-</br>
-</br>
-
-
-
 ## 4. Requisitos
 
 ### 4.1. Ferramentas Necessárias
@@ -47,32 +41,18 @@ A execução deste projeto requer a instalação das seguintes ferramentas:
 
 - **gRPC**: Responsável por estabelecer a comunicação entre cliente e servidor.
 
-**QEMU/KVM**: Empregados na criação e execução das máquinas virtuais.
+- **QEMU/KVM**: Empregados na criação e execução das máquinas virtuais.
 
-**Libvirt**: Usado para gerenciar os recursos das VMs.
+- **Libvirt**: Usado para gerenciar os recursos das VMs.
 
 - **Virt-manager**: Fornece uma interface gráfica para facilitar o gerenciamento das máquinas virtuais.
 
 
 ### 4.2. Capacidades das VMs
+
 - **vm01:** 20GB de disco, 2GB de RAM e 2 CPUs.
 - **vm02:** 20GB de disco, 2GB de RAM e 2 CPUs.
 - **vm03:** 20GB de disco, 2GB de RAM e 2 CPUs.
-
-</br>
-</br>
-</br>
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## 5. Passo a Passo para Implementação
@@ -92,12 +72,12 @@ git clone https://github.com/JoaoBarreto03/Trabalho1-PSPD.git
 
 ### 5.2. Preparando o Ambiente para o gRPC
 
-Clone o repositório gRPC e Faça a intalação localmente conforme no site oficial e linguagem: 
-    - Servidores [GO](https://grpc.io/docs/languages/go/quickstart/)
-    - Cliente  [Python](https://grpc.io/docs/languages/python/quickstart/)
+Clone o repositório gRPC e Faça a intalação localmente conforme no site oficial e linguagem:
+
+- Servidores [GO](https://grpc.io/docs/languages/go/quickstart/)
+- Cliente  [Python](https://grpc.io/docs/languages/python/quickstart/)
 
 Lembre-se de executar o servidor antes do cliente.
-
 
 
 #### 5.2.1. Executando Servidor (VM2 e VM3) em GO
@@ -106,7 +86,6 @@ Lembre-se de executar o servidor antes do cliente.
 ```bash
 go run server.go
 ```
-
 
 
 #### 5.2.2. Executando Servidor (VM1) em Python
@@ -125,6 +104,7 @@ pip install -r requirements.txt
 
 
 1. Instale o QEMU, libvirt e virt-manager:
+
 ```bash
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
 ```
@@ -132,11 +112,11 @@ sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils vir
 
 
 ### 5.4. Configuração de Rede
+
 Configure duas redes:
+
 - **LAN #1**: Rede conectando os hosts.
 - **LAN #2**: Rede virtual conectando as VMs.
-
-
 
 
 ### 5.5 Executando o Backend (gRPC cliente VM1)
@@ -160,8 +140,6 @@ http://<IP_DA_VM_CLIENTE>:8080/
 ```
 
 
-
-
 ## 6. Estrutura do Projeto
 
 
@@ -180,7 +158,6 @@ A entrega consiste em:
 4. **Documentação dos códigos** e configurações.
 
 ## 8. Links Úteis
-
 
 - [gRPC](https://grpc.io/)
 - [QEMU](https://www.qemu.org/)
