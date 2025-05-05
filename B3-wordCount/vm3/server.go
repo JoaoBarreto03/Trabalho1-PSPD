@@ -6,7 +6,7 @@ import (
 	"net"
 	"strings"
 
-	pb "wordcountpb"
+	pb "vm3/wordcountpb"
 
 	"google.golang.org/grpc"
 )
@@ -33,6 +33,8 @@ func (s *server) MostFrequentWord(ctx context.Context, req *pb.TextRequest) (*pb
 		}
 	}
 
+	log.Println(text)
+
 	return &pb.MostFrequentWordResponse{
 		Word:  maxWord,
 		Count: int32(maxCount),
@@ -40,7 +42,7 @@ func (s *server) MostFrequentWord(ctx context.Context, req *pb.TextRequest) (*pb
 }
 
 func main() {
-	lis, err := net.Listen("tcp", ":50051")
+	lis, err := net.Listen("tcp", ":50054")
 	if err != nil {
 		log.Fatalf("Erro ao escutar: %v", err)
 	}
@@ -48,7 +50,8 @@ func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterWordCountServiceServer(grpcServer, &server{})
 
-	log.Println("Servidor gRPC escutando em :50051")
+
+	log.Println("Servidor gRPC escutando em :50054")
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Erro ao servir: %v", err)
 	}

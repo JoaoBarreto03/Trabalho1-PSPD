@@ -1,8 +1,6 @@
 syntax = "proto3";
 
-package wordcount;
-
-option go_package = "wordcountpb";
+option go_package = "./wordcountpb;wordcountpb";
 
 service WordCountService {
   rpc MostFrequentWord (TextRequest) returns (MostFrequentWordResponse);

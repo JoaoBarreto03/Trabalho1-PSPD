@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Contador de Palavras</title>
+    <meta charset="UTF-8">
+    <title>Serviços de Texto via gRPC</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Contador de Palavras via gRPC</h1>
+    <h1>Serviços de Texto via gRPC</h1>
+
     <form action="/processar" method="post">
-        <textarea name="texto" rows="10" cols="50" placeholder="Digite o texto..."></textarea><br>
+        <textarea name="texto" rows="10" cols="50" placeholder="Digite o texto..."></textarea><br><br>
+
+        <label for="servico">Escolha o serviço:</label>
+        <select name="servico" id="servico">
+            <option value="contar">Contar Palavras (histograma)</option>
+            <option value="frequente">Palavra mais frequente</option>
+            <option value="ambos">Ambos</option>
+        </select><br><br>
+
         <button type="submit">Enviar</button>
     </form>
 
-    {% if resultado %}
-        <h2>Resultado</h2>
+    {% if resultado and mais_frequente %}
+        <h2>Resultado histograma</h2>
         <pre>{{ resultado }}</pre>
+
+        <hr>
+
+        <h2>Resultado Palavra mais frequente</h2>
+        <p><strong>Palavra mais frequente:</strong> {{ mais_frequente }} ({{ contagem }}x)</p>
+
+    {% elif resultado %}
+        <h2>Resultado histograma</h2>
+        <pre>{{ resultado }}</pre>
+
+    {% elif mais_frequente %}
+        <h2>Resultado Palavra mais frequente</h2>
+        <p><strong>Palavra mais frequente:</strong> {{ mais_frequente }} ({{ contagem }}x)</p>
     {% endif %}
 </body>
 </html>
+
